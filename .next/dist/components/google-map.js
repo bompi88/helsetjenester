@@ -38,6 +38,10 @@ var _isomorphicFetch = require('isomorphic-fetch');
 
 var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
 
+var _googleMapMarker = require('./google-map-marker');
+
+var _googleMapMarker2 = _interopRequireDefault(_googleMapMarker);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _jsxFileName = '/Users/bompi88/projects/helsetjenester/components/google-map.js';
@@ -51,10 +55,9 @@ var GoogleMapContainer = function (_Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (GoogleMapContainer.__proto__ || (0, _getPrototypeOf2.default)(GoogleMapContainer)).call(this, props));
 
-    _this.state = { marker: null };
+    _this.state = { marker: null, services: [] };
     _this.onMapLoad = _this.onMapLoad.bind(_this);
     _this.onMapClick = _this.onMapClick.bind(_this);
-    _this.fetchHealthServices = _this.fetchHealthServices.bind(_this);
     return _this;
   }
 
@@ -65,19 +68,7 @@ var GoogleMapContainer = function (_Component) {
         args[_key] = arguments[_key];
       }
 
-      console.log('map loaded', args);
-    }
-  }, {
-    key: 'fetchHealthServices',
-    value: function fetchHealthServices(lat, lng) {
-      console.log('http://data.helsenorge.no/healthservices?$top=10&latitude=' + lat + '&longitude=' + lng);
-      (0, _isomorphicFetch2.default)('http://data.helsenorge.no/healthservices?$top=10&latitude=' + lat + '&longitude=' + lng).then(function (response) {
-        if (response.status >= 400) {
-          throw new Error('Bad response from server');
-        }
-        console.log(response);
-        return response.json();
-      });
+      console.log('Map loaded', args);
     }
   }, {
     key: 'onMapClick',
@@ -87,11 +78,10 @@ var GoogleMapContainer = function (_Component) {
       this.setState({
         marker: {
           position: latLng,
-          defaultAnimation: 2,
+          defaultAnimation: 0,
           key: Date.now()
         }
       });
-      this.fetchHealthServices(latLng.lat(), latLng.lng());
     }
   }, {
     key: 'render',
@@ -104,12 +94,12 @@ var GoogleMapContainer = function (_Component) {
         onClick: this.onMapClick,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 33
         }
-      }, this.state.marker ? _react2.default.createElement(_reactGoogleMaps.Marker, (0, _extends3.default)({}, this.state.marker, {
+      }, this.state.marker ? _react2.default.createElement(_googleMapMarker2.default, (0, _extends3.default)({}, this.state.marker, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 39
         }
       })) : null);
     }

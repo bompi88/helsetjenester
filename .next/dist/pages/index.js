@@ -23,7 +23,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _jsxFileName = '/Users/bompi88/projects/helsetjenester/pages/index.js?entry';
 
 exports.default = function () {
-  return _react2.default.createElement('div', { style: { height: 'calc(100vh - 40px)', marginTop: '40px' }, __source: {
+  return _react2.default.createElement('div', { style: { height: 'calc(100vh - 40px)', marginTop: '40px', paddingBottom: '-40px' }, __source: {
       fileName: _jsxFileName,
       lineNumber: 7
     }
@@ -32,11 +32,11 @@ exports.default = function () {
       fileName: _jsxFileName,
       lineNumber: 8
     }
-  }, _react2.default.createElement('meta', { charset: 'utf-8', __source: {
+  }, _react2.default.createElement('meta', { charSet: 'utf-8', __source: {
       fileName: _jsxFileName,
       lineNumber: 9
     }
-  }), _react2.default.createElement('meta', { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge,chrome=1', __source: {
+  }), _react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge,chrome=1', __source: {
       fileName: _jsxFileName,
       lineNumber: 10
     }
@@ -57,13 +57,21 @@ exports.default = function () {
       fileName: _jsxFileName,
       lineNumber: 16
     }
+  }), _react2.default.createElement('link', { rel: 'stylesheet', href: '/static/main.css', __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    }
+  }), _react2.default.createElement('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js', __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    }
   })), _react2.default.createElement(_semanticUiReact.Menu, { inverted: true, fixed: 'top', borderless: true, style: { border: 0, margin: 0 }, __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 21
     }
   }, _react2.default.createElement(_semanticUiReact.Menu.Item, { name: 'Helsetjenestekart', active: true, __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 22
     }
   })), _react2.default.createElement(_googleMap2.default, {
     containerElement: _react2.default.createElement('div', { style: {
@@ -73,7 +81,7 @@ exports.default = function () {
         margin: 0
       }, __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 26
       }
     }),
     mapElement: _react2.default.createElement('div', { style: {
@@ -83,12 +91,12 @@ exports.default = function () {
         margin: 0
       }, __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 34
       }
     }),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 24
     }
   }));
 };

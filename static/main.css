@@ -1,0 +1,7 @@
+body {
+  overflow-y: hidden;
+}
+
+.contact-button:hover {
+  cursor: pointer;
+}
