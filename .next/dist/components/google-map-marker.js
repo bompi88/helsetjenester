@@ -4,10 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -41,9 +37,6 @@ var _healthService = require('./health-service');
 var _healthService2 = _interopRequireDefault(_healthService);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var _jsxFileName = '/Users/bompi88/projects/helsetjenester/components/google-map-marker.js';
-
 
 var GoogleMapMarker = function (_Component) {
   (0, _inherits3.default)(GoogleMapMarker, _Component);
@@ -84,35 +77,13 @@ var GoogleMapMarker = function (_Component) {
     key: 'render',
     value: function render() {
       var hasContent = this.state.services.length;
-      return _react2.default.createElement(_reactGoogleMaps.Marker, (0, _extends3.default)({}, this.props, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 39
-        }
-      }), _react2.default.createElement(_reactGoogleMaps.InfoWindow, {
+      return _react2.default.createElement(_reactGoogleMaps.Marker, this.props, _react2.default.createElement(_reactGoogleMaps.InfoWindow, {
         onCloseClick: function onCloseClick() {},
         onDomReady: function onDomReady() {},
-        onZIndexChanged: function onZIndexChanged() {},
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 40
-        }
-      }, hasContent ? _react2.default.createElement(_semanticUiReact.List, { divided: true, relaxed: true, __source: {
-          fileName: _jsxFileName,
-          lineNumber: 46
-        }
-      }, this.state.services.map(function (service) {
-        return _react2.default.createElement(_healthService2.default, (0, _extends3.default)({}, service, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 48
-          }
-        }));
-      })) : _react2.default.createElement(_semanticUiReact.Icon, { loading: true, name: 'notched circle', __source: {
-          fileName: _jsxFileName,
-          lineNumber: 51
-        }
-      })));
+        onZIndexChanged: function onZIndexChanged() {}
+      }, hasContent ? _react2.default.createElement(_semanticUiReact.List, { divided: true, relaxed: true }, this.state.services.map(function (service) {
+        return _react2.default.createElement(_healthService2.default, service);
+      })) : _react2.default.createElement(_semanticUiReact.Icon, { loading: true, name: 'notched circle' })));
     }
   }]);
 

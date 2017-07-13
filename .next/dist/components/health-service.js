@@ -32,9 +32,6 @@ var _semanticUiReact = require('semantic-ui-react');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _jsxFileName = '/Users/bompi88/projects/helsetjenester/components/health-service.js';
-
-
 var HealthService = function (_Component) {
   (0, _inherits3.default)(HealthService, _Component);
 
@@ -66,18 +63,10 @@ var HealthService = function (_Component) {
     value: function renderPhone() {
       var phone = this.props.phone;
 
-      return _react2.default.createElement(_semanticUiReact.List.Item, { className: 'contact-button', onClick: this.phoneHome.bind(this, phone), __source: {
-          fileName: _jsxFileName,
-          lineNumber: 23
-        }
-      }, _react2.default.createElement(_semanticUiReact.Icon, {
+      return _react2.default.createElement(_semanticUiReact.List.Item, { className: 'contact-button', onClick: this.phoneHome.bind(this, phone) }, _react2.default.createElement(_semanticUiReact.Icon, {
         size: 'large',
         color: 'olive',
-        name: 'mobile',
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 24
-        }
+        name: 'mobile'
       }));
     }
   }, {
@@ -85,18 +74,10 @@ var HealthService = function (_Component) {
     value: function renderEmail() {
       var email = this.props.email;
 
-      return _react2.default.createElement(_semanticUiReact.List.Item, { className: 'contact-button', onClick: this.sendEmail.bind(this, email), __source: {
-          fileName: _jsxFileName,
-          lineNumber: 36
-        }
-      }, _react2.default.createElement(_semanticUiReact.Icon, {
+      return _react2.default.createElement(_semanticUiReact.List.Item, { className: 'contact-button', onClick: this.sendEmail.bind(this, email) }, _react2.default.createElement(_semanticUiReact.Icon, {
         size: 'large',
         color: 'olive',
-        name: 'mail',
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 37
-        }
+        name: 'mail'
       }));
     }
   }, {
@@ -104,18 +85,10 @@ var HealthService = function (_Component) {
     value: function renderWebsite() {
       var website = this.props.website;
 
-      return _react2.default.createElement(_semanticUiReact.List.Item, { className: 'contact-button', onClick: this.gotoSite.bind(this, website), __source: {
-          fileName: _jsxFileName,
-          lineNumber: 49
-        }
-      }, _react2.default.createElement(_semanticUiReact.Icon, {
+      return _react2.default.createElement(_semanticUiReact.List.Item, { className: 'contact-button', onClick: this.gotoSite.bind(this, website) }, _react2.default.createElement(_semanticUiReact.Icon, {
         size: 'large',
         color: 'olive',
-        name: 'linkify',
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 50
-        }
+        name: 'linkify'
       }));
     }
   }, {
@@ -130,31 +103,7 @@ var HealthService = function (_Component) {
           email = _props.email,
           website = _props.website;
 
-      return _react2.default.createElement(_semanticUiReact.List.Item, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 72
-        }
-      }, _react2.default.createElement(_semanticUiReact.List.Content, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 73
-        }
-      }, _react2.default.createElement(_semanticUiReact.List.Header, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 74
-        }
-      }, name), street ? _react2.default.createElement(_semanticUiReact.List.Description, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 75
-        }
-      }, street, ', ', postNr, ' ', postName) : null, _react2.default.createElement(_semanticUiReact.List, { horizontal: true, floated: 'left', __source: {
-          fileName: _jsxFileName,
-          lineNumber: 76
-        }
-      }, phone ? this.renderPhone() : null, email ? this.renderEmail() : null, website ? this.renderWebsite() : null)));
+      return _react2.default.createElement(_semanticUiReact.List.Item, null, _react2.default.createElement(_semanticUiReact.List.Content, null, _react2.default.createElement(_semanticUiReact.List.Header, null, name), street ? _react2.default.createElement(_semanticUiReact.List.Description, null, street, ', ', postNr, ' ', postName) : null, _react2.default.createElement(_semanticUiReact.List, { horizontal: true, floated: 'left' }, phone ? this.renderPhone() : null, email ? this.renderEmail() : null, website ? this.renderWebsite() : null)));
     }
   }]);
 
