@@ -1,9 +1,9 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { List, Icon } from 'semantic-ui-react';
 
 class HealthService extends Component {
 
-  phoneHome(phone, event) {
+  phoneHome(phone) {
     window.location.href = `tel://${phone}`;
   }
 
@@ -19,11 +19,11 @@ class HealthService extends Component {
   renderPhone() {
     const { phone } = this.props;
     return (
-      <List.Item className='contact-button' onClick={this.phoneHome.bind(this, phone)}>
+      <List.Item className="contact-button" onClick={this.phoneHome.bind(this, phone)}>
         <Icon
-          size='large'
-          color='olive'
-          name='mobile'
+          size="large"
+          color="olive"
+          name="mobile"
         />
       </List.Item>
     );
@@ -32,11 +32,11 @@ class HealthService extends Component {
   renderEmail() {
     const { email } = this.props;
     return (
-      <List.Item className='contact-button' onClick={this.sendEmail.bind(this, email)}>
+      <List.Item className="contact-button" onClick={this.sendEmail.bind(this, email)}>
         <Icon
-          size='large'
-          color='olive'
-          name='mail'
+          size="large"
+          color="olive"
+          name="mail"
         />
       </List.Item>
     );
@@ -45,18 +45,17 @@ class HealthService extends Component {
   renderWebsite() {
     const { website } = this.props;
     return (
-      <List.Item className='contact-button' onClick={this.gotoSite.bind(this, website)}>
+      <List.Item className="contact-button" onClick={this.gotoSite.bind(this, website)}>
         <Icon
-          size='large'
-          color='olive'
-          name='linkify'
+          size="large"
+          color="olive"
+          name="linkify"
         />
       </List.Item>
     );
   }
 
   render() {
-
     const {
       name,
       street,
@@ -72,7 +71,7 @@ class HealthService extends Component {
         <List.Content>
           <List.Header>{name}</List.Header>
           { street ? <List.Description>{street}, {postNr} {postName}</List.Description> : null }
-          <List horizontal floated='left'>
+          <List horizontal floated="left">
             { phone ? this.renderPhone() : null }
             { email ? this.renderEmail() : null }
             { website ? this.renderWebsite() : null }

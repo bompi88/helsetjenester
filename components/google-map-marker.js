@@ -1,7 +1,8 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { Marker } from 'react-google-maps';
-import InfoBox from "react-google-maps/lib/addons/InfoBox";
+import InfoBox from 'react-google-maps/lib/addons/InfoBox';
 import { List, Icon } from 'semantic-ui-react';
+import fetch from 'isomorphic-fetch';
 
 import HealthService from './health-service';
 
@@ -23,11 +24,11 @@ class GoogleMapMarker extends Component {
   fetchHealthServices(lat, lng) {
     fetch(`/healthservices/${lat}/${lng}`)
     .then((response) => {
-  		if (response.status >= 400) {
-  			throw new Error('Bad response from server');
-  		}
-  		return response.json();
-  	}).then((services) => {
+      if (response.status >= 400) {
+        throw new Error('Bad response from server');
+      }
+      return response.json();
+    }).then((services) => {
       this.setState({ services });
     }).catch((error) => {
       console.log(error);
@@ -53,11 +54,11 @@ class GoogleMapMarker extends Component {
           >
             { hasContent ? (
               <List divided relaxed>
-                {this.state.services.map((service) => {
-                  return <HealthService key={service.name} {...service}/>;
-                })}
+                {this.state.services.map(service => (
+                  <HealthService key={service.name} {...service} />
+                ))}
               </List>
-            ) : <Icon loading name='notched circle'/> }
+            ) : <Icon loading name="notched circle" /> }
           </div>
         </InfoBox>
       </Marker>
