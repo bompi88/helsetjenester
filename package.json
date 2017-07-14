@@ -16,7 +16,9 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js",
+    "docker:publish": "./.scripts/docker-publish.sh",
+    "deploy": "npm run docker:publish && ssh bompi88@52.164.226.36 'bash -s' < ./.scripts/server-deploy.sh"
   },
   "repository": {
     "type": "git",

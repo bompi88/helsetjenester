@@ -12,7 +12,7 @@ export default () => (
 
       <title>Helsetjenestekart</title>
 
-      <script src="https://maps.googleapis.com/maps/api/js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsBErMTKVnCd2rEGfcNMWvD_vi-VY2s-c&callback=initMap"></script>
       <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css' />
       <link rel='stylesheet' href='/static/main.css' />
 

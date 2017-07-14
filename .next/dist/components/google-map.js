@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -39,6 +43,9 @@ var _googleMapMarker = require('./google-map-marker');
 var _googleMapMarker2 = _interopRequireDefault(_googleMapMarker);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _jsxFileName = '/Users/bompi88/projects/helsetjenester/components/google-map.js';
+
 
 var GoogleMapContainer = function (_Component) {
   (0, _inherits3.default)(GoogleMapContainer, _Component);
@@ -84,8 +91,17 @@ var GoogleMapContainer = function (_Component) {
         ref: this.onMapLoad,
         defaultZoom: 4,
         defaultCenter: { lat: 66.1, lng: 13.4 },
-        onClick: this.onMapClick
-      }, this.state.marker ? _react2.default.createElement(_googleMapMarker2.default, this.state.marker) : null);
+        onClick: this.onMapClick,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 33
+        }
+      }, this.state.marker ? _react2.default.createElement(_googleMapMarker2.default, (0, _extends3.default)({}, this.state.marker, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 39
+        }
+      })) : null);
     }
   }]);
 
