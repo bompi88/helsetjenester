@@ -51,6 +51,8 @@ class GoogleMapMarker extends Component {
             className="scrollable"
             onMouseEnter={onMouseEnterHandler}
             onMouseLeave={onMouseLeaveHandler}
+            onTouchStart={onMouseEnterHandler}
+            onTouchEnd={onMouseLeaveHandler}
           >
             { hasContent ? (
               <List divided relaxed>

@@ -34,12 +34,27 @@ class GoogleMapContainer extends Component {
   }
 
   render() {
+    const mapOptions = {
+      scrollwheel: !this.state.hover,
+      zoomControlOptions: {
+        style: 'SMALL',
+      },
+      mapTypeControlOptions: {
+        position: 'BOTTOM_RIGHT',
+      },
+      draggable: !this.state.hover,
+      rotateControl: false,
+      scaleControl: false,
+      streetViewControl: false,
+      panControl: false,
+    };
     return (
       <GoogleMap
         ref={this.onMapLoad}
         defaultZoom={4}
         defaultCenter={{ lat: 66.1, lng: 13.4 }}
         onClick={this.onMapClick}
+        options={mapOptions}
       >
         { this.state.marker ? (
           <GoogleMapMarker
