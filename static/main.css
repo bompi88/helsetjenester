@@ -5,3 +5,32 @@ body {
 .contact-button:hover {
   cursor: pointer;
 }
+
+.infoBox {
+  width: 400px;
+  max-width: 60vw;
+  height: 400px;
+  max-height: 80vh;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  overflow: hidden !important;
+}
+
+.infoBox > div {
+  height: 100%;
+}
+
+.infoBox .scrollable {
+  overflow: auto;
+  height: 100%;
+}
+
+.infoBox .scrollable::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+.infoBox .scrollable::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0,0,0,.5);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}

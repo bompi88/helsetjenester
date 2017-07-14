@@ -8,9 +8,11 @@ class GoogleMapContainer extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { marker: null, services: [] };
+    this.state = { marker: null, hover: false };
     this.onMapLoad = this.onMapLoad.bind(this);
     this.onMapClick = this.onMapClick.bind(this);
+    this.onMouseEnterHandler = this.onMouseEnterHandler.bind(this);
+    this.onMouseLeaveHandler = this.onMouseLeaveHandler.bind(this);
   }
 
   onMapLoad(...args) {
@@ -18,17 +20,28 @@ class GoogleMapContainer extends Component {
   }
 
   onMapClick({ latLng }) {
-    this.setState({
-      marker: {
-        position: latLng,
-        defaultAnimation: 0,
-        key: Date.now()
-      }
-    });
+    if (!this.state.hover) {
+      this.setState({
+        marker: {
+          position: latLng,
+          defaultAnimation: 0,
+          key: Date.now()
+        }
+      });
+    }
+  }
+
+  onMouseEnterHandler() {
+    console.log('enter')
+    this.setState({ hover: true });
+  }
+
+  onMouseLeaveHandler() {
+    this.setState({ hover: false });
   }
 
   render() {
-
+    console.log(this.state.hover)
     return (
       <GoogleMap
         ref={this.onMapLoad}
@@ -36,7 +49,12 @@ class GoogleMapContainer extends Component {
         defaultCenter={{ lat: 66.1, lng: 13.4 }}
         onClick={this.onMapClick}
       >
-        { this.state.marker ? <GoogleMapMarker {...this.state.marker} /> : null }
+        { this.state.marker ? (
+          <GoogleMapMarker
+            onMouseEnterHandler={this.onMouseEnterHandler}
+            onMouseLeaveHandler={this.onMouseLeaveHandler}
+            {...this.state.marker} />
+        ) : null }
       </GoogleMap>
     );
   }

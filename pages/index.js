@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { Menu } from 'semantic-ui-react';
 
 import GoogleMap from '../components/google-map';
+import WelcomeModal from '../components/welcome-modal';
 
 export default () => (
   <div style={{ height: 'calc(100vh - 40px)', marginTop: '40px', paddingBottom: '-40px'}}>
@@ -12,7 +13,7 @@ export default () => (
 
       <title>Helsetjenestekart</title>
 
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsBErMTKVnCd2rEGfcNMWvD_vi-VY2s-c&callback=initMap"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsBErMTKVnCd2rEGfcNMWvD_vi-VY2s-c"></script>
       <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css' />
       <link rel='stylesheet' href='/static/main.css' />
 
@@ -39,5 +40,7 @@ export default () => (
         }} />
       }
     />
+
+    <WelcomeModal />
   </div>
 );

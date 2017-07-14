@@ -1,5 +1,6 @@
 import { Component } from 'react';
-import { Marker, InfoWindow } from 'react-google-maps';
+import { Marker } from 'react-google-maps';
+import InfoBox from "react-google-maps/lib/addons/InfoBox";
 import { List, Icon } from 'semantic-ui-react';
 
 import HealthService from './health-service';
@@ -34,22 +35,31 @@ class GoogleMapMarker extends Component {
   }
 
   render() {
+    const { onMouseEnterHandler, onMouseLeaveHandler } = this.props;
     const hasContent = this.state.services.length;
+
     return (
       <Marker {...this.props}>
-        <InfoWindow
+        <InfoBox
           onCloseClick={() => {}}
           onDomReady={() => {}}
           onZIndexChanged={() => {}}
+          options={{ enableEventPropagation: true }}
         >
-          { hasContent ? (
-            <List divided relaxed>
-              {this.state.services.map((service) => {
-                return <HealthService {...service}/>;
-              })}
-            </List>
-          ) : <Icon loading name='notched circle'/> }
-        </InfoWindow>
+          <div
+            className="scrollable"
+            onMouseEnter={onMouseEnterHandler}
+            onMouseLeave={onMouseLeaveHandler}
+          >
+            { hasContent ? (
+              <List divided relaxed>
+                {this.state.services.map((service) => {
+                  return <HealthService key={service.name} {...service}/>;
+                })}
+              </List>
+            ) : <Icon loading name='notched circle'/> }
+          </div>
+        </InfoBox>
       </Marker>
     );
   }

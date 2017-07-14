@@ -3,8 +3,7 @@ import { List, Icon } from 'semantic-ui-react';
 
 class HealthService extends Component {
 
-  phoneHome(phone) {
-    console.log(phone)
+  phoneHome(phone, event) {
     window.location.href = `tel://${phone}`;
   }
 
